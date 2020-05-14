@@ -1,25 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import BottomNavigator from "./components/suppernicenavbar";
-function Home() {
-  return <section>Home</section>;
-}
-
-function Profile() {
-  return <section>Profile</section>;
-}
-
-function Login() {
-  return <section>Login</section>;
-}
-
-function Love() {
-  return <section>Love</section>;
-}
-
-function Chart() {
-  return <section>Chart</section>;
-}
+import Home from "./pages/Home";
+import Love from "./pages/Love";
+import Login from "./pages/Register";
+import Profile from "./pages/Profile";
 
 export default class App extends React.Component {
   render() {
@@ -35,19 +20,19 @@ export default class App extends React.Component {
           <Route path="/love">
             <Love />
           </Route>
-          <Route path="/chart">
+          {/* <Route path="/chart">
             <Chart />
-          </Route>
+          </Route> */}
           <Route path="/">
-            <Home />
+            <Home headerRef={(el) => (this.homeHeader = el)} />
           </Route>
         </Switch>
         <BottomNavigator
           routes={[
             {
               path: "/",
-              name: "Home",
-              icon: "fas fa-house-damage",
+              name: "Discovery",
+              icon: "far fa-compass",
             },
             {
               path: "/me",
@@ -64,11 +49,11 @@ export default class App extends React.Component {
               name: "Register",
               icon: "fab fa-artstation",
             },
-            {
-              path: "/chart",
-              name: "Chart",
-              icon: "fas fa-chart-area",
-            },
+            // {
+            //   path: "/chart",
+            //   name: "Chart",
+            //   icon: "fas fa-chart-area",
+            // },
           ]}
         />
       </Router>

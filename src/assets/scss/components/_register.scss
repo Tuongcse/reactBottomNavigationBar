@@ -1,0 +1,9 @@
+.register {
+  background: chocolate;
+  transition: clip-path 0.5s ease-out;
+  clip-path: circle(0% at 100% 100%);
+
+  &.active {
+    clip-path: circle(150% at 100% 100%);
+  }
+}
